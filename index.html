@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #answer {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Add a custom logo or picture as head -->
+    <!-- To change the logo, replace the 'src' attribute with the path to your desired image -->
+    <img id="logo" src="https://media.licdn.com/dms/image/D5603AQH0QyArrIOzJw/profile-displayphoto-shrink_200_200/0/1666751889132?e=1726704000&v=beta&t=3_FrUyt6kJkq1wHKHidkqYGKOBrKcbFwNj_8PGEzMjA" alt="Custom Logo">
+    
+    <h1>Information about Muhamad Afkar Gumintang</h1>
+    
+    <select id="question">
+        <option value="0">Select a question</option>
+        <option value="1">Where is Muhamad Afkar Gumintang working?</option>
+        <option value="2">Where is Afkar Born?</option>
+        <option value="3">How old is Afkar?</option>
+    </select>
+    <button onclick="displayAnswer()">Submit</button>
+    
+    <div id="answer"></div>
+    
+    <script>
+        function displayAnswer() {
+            const question = document.getElementById('question').value;
+            const answerDiv = document.getElementById('answer');
+            let answer = '';
+            
+            switch(question) {
+                case '1':
+                    answer = 'PT Toshiba Asia Pacific Indonesia';
+                    break;
+                case '2':
+                    answer = 'Tegal, Central Java';
+                    break;
+                case '3':
+                    answer = '29 years old';
+                    break;
+                default:
+                    answer = 'Please select a valid question.';
+            }
+            
+            answerDiv.textContent = answer;
+        }
+    </script>
+
+</body>
+</html>
